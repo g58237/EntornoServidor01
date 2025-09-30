@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Tecnologías</h1>
+<h2></h2>
+  <dl>
+    {% for tecnologia, def in lista.items %}
+    <dt>{{ tecnologia }}</dt>
+    <dd>{{ def }}</dd>
+    {% endfor %}
+  </dl>
+{% endblock %}

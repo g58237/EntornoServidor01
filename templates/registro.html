@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if enviado %}
+        <p>“Bienvenido {{ nombre }} del curso {{ curso }}. Te contactaremos en {{ email }}”</p>
+         {% else %}
+         <p>“Por favor, rellena el formulario”.</p>
+     {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+        <label for="curso">Curso:</label>
+        <input type="text" name="curso" id="curso" required><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}
