@@ -29,3 +29,19 @@ def tecnologias(request):
         'VS Code': 'Es un IDE de código abierto usado para hacer aplicaciones con muchos lenguajes de programación (Python, JavaScript, etc.).'
     }
     return render(request, 'tecnologias.html', {'lista': lista})
+
+def calculadora(request):
+    resultado = None
+    if request.method == 'POST':
+        a = int(request.POST.get('a', 0))
+        b = int(request.POST.get('b', 0))
+        op = request.POST.get('op')
+        if op == 'suma':
+            resultado = a + b
+        elif op == 'resta':
+            resultado = a - b
+        elif op == 'multi':
+            resultado = a * b
+        elif op == 'div' and b != 0:
+            resultado = a / b
+    return render(request, 'calculadora.html', {'resultado': resultado})            

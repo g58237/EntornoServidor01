@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Calculadora</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="number" name="a" placeholder="Número A">
+  <input type="number" name="b" placeholder="Número B">
+  <select name="op">
+    <option value="suma">Sumar</option>
+    <option value="resta">Restar</option>
+    <option value="multi">Multiplicar</option>
+    <option value="div">Dividir</option>
+  </select>
+  <button type="submit">Calcular</button>
+</form>
+
+    {% if resultado is not None %}
+    <h2>Resultado: {{ resultado }}</h2>
+    {% endif %}
+{% endblock %}
