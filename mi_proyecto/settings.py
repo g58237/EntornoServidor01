@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ofz22g1b=t2-+&m-ze%*rs$0pwj8_f_s09y+g1w2u47(ufkz+x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['217.154.179.72', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
+#STATICFILES_DIRS = [BASE_DIR / 'static']
 
 WSGI_APPLICATION = 'mi_proyecto.wsgi.application'
 
@@ -117,7 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = '/var/www/EntornoServidor01/static'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/www/EntornoServidor01/media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
